@@ -206,7 +206,7 @@ const toJSON = (definitions, typesToInclude) => {
   const richTypes = fields.filter((f) => f.richType);
   return richTypes
     .filter((type) =>
-      !typesToInclude ? true : typesToInclude.includes(type.type)
+      !typesToInclude?.length ? true : typesToInclude.includes(type.type)
     )
     .map((type) => fieldToObject(type.definition, typeDefs, richTypes));
 };
